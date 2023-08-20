@@ -8,12 +8,34 @@ int main()
 
 	cout << "Spell out a number and I will give you the digit;" << '\n';
 	cout << "Or give me a digit and I will spell it out for you: ";
-	int word_digit{};
+	string word_digit{};
 	while (cin >> word_digit) {
-		cout << string_vals[word_digit] << '\n';
+        bool found = false;
+
+        // Check if the input is a spelled-out number
+        for (size_t i = 0; i < string_vals.size(); ++i) {
+            if (word_digit == string_vals[i]) {
+                cout << int_vals[i] << '\n';
+                found = true;
+                break;
+            }
+        }
+
+        // If not found, check if the input is a digit
+        if (!found) {
+            for (size_t i = 0; i < int_vals.size(); ++i) {
+                if (word_digit == to_string(int_vals[i])) {
+                    cout << string_vals[i] << '\n';
+                    found = true;
+                    break;
+                }
+            }
 		}
 
-	
+        if (!found) {
+            cout << "Invalid input." << '\n';
+        }
+    }
 
 	return 0;
 }
