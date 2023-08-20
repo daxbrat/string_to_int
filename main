@@ -1,0 +1,16 @@
+#include "std_lib_facilities.h"
+
+int main()
+{	
+	
+	vector<string>string_vals{ "zero", "one", "two", "three", "four", "five", "six", "seven", "eight", "nine"};
+
+	cout << "Spell out a number and I will give you the digit;";
+	cout << "Or give me a digit and I will spell it out for you: ";
+	string word_digit{};
+	while (cin >> word_digit) {
+
+	}
+
+	return 0;
+}
